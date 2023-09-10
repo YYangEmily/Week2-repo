@@ -14,11 +14,32 @@ Challenge 1
 
 
 ```{r Challenge 1}
+library(dplyr)
+library(tidyr)
 library(stringr)
-v<- "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed"
-str_split(v, " ")
+v <- ("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed")
+x <- str_split(v, " ")
+x
+y <- substr(x,1,22)
+m <- matrix(data = y , nrow = 8, ncol = 3, byrow = TRUE)
+m
 
-x<- str_split(v, " ")
+```
+Challenge 2
+```{r Challenge 2}
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+m
+x <- m[,c(2,3,6)]
+x
+x <- m[c(6:8),]
+x
 
+```
+Challenge 3
+```{r Challenge 3}
+a <- array(data = 400:1, dim = c(5,5,4,4))
+a[1, 1, 1, 2]
+a[2, 3, 2,]
+a[1:5, 1:5, 3, 3]
 ```
 
