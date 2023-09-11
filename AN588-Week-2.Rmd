@@ -17,9 +17,13 @@ Challenge 1
 library(dplyr)
 library(tidyr)
 library(stringr)
+
+# Single vector
 v <- ("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed")
+#Sub strings
 x <- str_split(v, " ")
 x
+#Whyyyyyyy
 y <- substr(x,1,22)
 m <- matrix(data = y , nrow = 8, ncol = 3, byrow = TRUE)
 m
@@ -29,17 +33,64 @@ Challenge 2
 ```{r Challenge 2}
 m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
 m
+# Select columns 2,3,6. Comma before c
 x <- m[,c(2,3,6)]
 x
+# Select rows 6 to 8. Comma after c
 x <- m[c(6:8),]
 x
 
+x1 <- m[c(2),]
+x2 <- m[ ,c(9)]
+m1 <- cbind(x1, x2)
+x1
+x2
+m1
 ```
 Challenge 3
 ```{r Challenge 3}
 a <- array(data = 400:1, dim = c(5,5,4,4))
+#All 4D specified so return 1 value
 a[1, 1, 1, 2]
+# 3 Dimensions specified and returns all possibilites of the 4th
 a[2, 3, 2,]
+# 2 dimensions have range so 2D
 a[1:5, 1:5, 3, 3]
 ```
+Challenge 4
+```{r Challenge 4, }
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+    "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+Strepsirhini
+Platyrrhini <- c("Cebidae", "Atelidae", "Pitheciidae")
+Catarrhini <- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+Anthropoidea <- list(Platyrrhini, Catarrhini)
+names(Anthropoidea) <- list("Platyrrhini", "Catarrhini")
+Anthropoidea
+Tarsioidea <- c("Tarsiidae")
+Haplorhini <- list(Anthropoidea, Tarsioidea)
+names(Haplorhini) <- list("Anthropoidea", "Tarsioidea")
+Haplorhini
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini") 
+Primates
+Phylogeny <- list(Primates)
+names(Phylogeny) <- list("Primates")
+Phylogeny
 
+
+```
+Challenge 5 
+```{r Challenge 5}
+m3 <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
+
+df <- m3
+df
+l <- as.logical(df[,c(2)])
+f <- as.factor(df[,c(3)])
+str(l)
+str(f)
+```
