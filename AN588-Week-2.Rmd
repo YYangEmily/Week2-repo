@@ -19,15 +19,16 @@ library(tidyr)
 library(stringr)
 
 # Single vector
-v <- ("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed")
+v <- ("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed blah blah")
 #Sub strings
 x <- str_split(v, " ")
 x
-#Whyyyyyyy
-y <- substr(x,1,22)
-m <- matrix(data = y , nrow = 8, ncol = 3, byrow = TRUE)
+# Make the string into 8x3 matrix. 
+m <- matrix(data = x[[1]] , nrow = 8, ncol = 3, byrow = TRUE)
 m
-
+# Pull out the thrid column which contains every third word
+b <- m[,c(3)]
+b
 ```
 Challenge 2
 ```{r Challenge 2}
@@ -39,12 +40,14 @@ x
 # Select rows 6 to 8. Comma after c
 x <- m[c(6:8),]
 x
-
+# Select row 2, column 2 to row 6, column 9
 x1 <- m[c(2),]
 x2 <- m[ ,c(9)]
-m1 <- cbind(x1, x2)
 x1
 x2
+
+library("qpcR")  
+m1 <- qpcR:::cbind.na(x1, x2)           # Bind as columns https://statisticsglobe.com/cbind-and-rbind-vectors-with-different-length-in-r
 m1
 ```
 Challenge 3
