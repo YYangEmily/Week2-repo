@@ -42,15 +42,9 @@ x
 # Select rows 6 to 8. Comma after c
 x <- m[c(6:8),]
 x
-# Select row 2, column 2 to row 6, column 9
-x1 <- m[c(2),]
-x2 <- m[ ,c(9)]
-x1
-x2
-
-library("qpcR")  
-m1 <- qpcR:::cbind.na(x1, x2)           # Bind as columns https://statisticsglobe.com/cbind-and-rbind-vectors-with-different-length-in-r
-m1
+# Select row 2, column 2 to row 6, column 9. (2,2) to (6,9)
+x <- m[c(2:6),c(2:9)]
+x
 ```
 Challenge 3
 ```{r Challenge 3}
