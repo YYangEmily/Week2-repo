@@ -2,7 +2,9 @@
 title: "AN588-Week-2"
 author: "Emily Yang"
 date: "`r Sys.Date()`"
+theme: cerulean
 output: html_document
+
 ---
 
 ```{r setup, include=FALSE}
