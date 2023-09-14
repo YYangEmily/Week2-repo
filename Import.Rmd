@@ -1,0 +1,34 @@
+---
+title: "Random People CSV"
+author: "Emily Yang"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Import txt Files**
+```{r Open txt}
+f <- "~/Downloads/CPDS-1960-2014-reduced.txt"
+d <- read.table(f, header = TRUE, sep = "\t", stringsAsFactors = FALSE, fill = T)
+head(d)
+```
+
+
+**Import CSV Files**
+```{r read CSV}
+f <- "~/Downloads/CPDS-1960-2014-reduced.csv"
+d <- read.csv(f, header = TRUE, stringsAsFactors = FALSE)
+head(d)
+```
+
+**Import Excel**
+```{r Import Excel}
+require(readxl)
+f <- "~/Downloads/CPDS-1960-2014-reduced.xlsx"
+d <- read_excel(f, sheet = 1, col_names = TRUE)
+head(d)
+```
+
