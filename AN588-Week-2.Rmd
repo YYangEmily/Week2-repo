@@ -2,9 +2,9 @@
 title: "AN588-Week-2"
 author: "Emily Yang"
 date: "`r Sys.Date()`"
-theme: cerulean
-output: html_document
-
+output:
+  rmarkdown::html_document:
+    theme: cosmo
 ---
 
 ```{r setup, include=FALSE}
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Working with Other Data Structures
-Challenge 1
+**Challenge 1**
 
 
 ```{r Challenge 1}
@@ -28,11 +28,11 @@ x
 # Make the string into 8x3 matrix. 
 m <- matrix(data = x[[1]] , nrow = 8, ncol = 3, byrow = TRUE)
 m
-# Pull out the thrid column which contains every third word
+# Pull out the third column which contains every third word
 b <- m[,c(3)]
 b
 ```
-Challenge 2
+**Challenge 2**
 ```{r Challenge 2}
 m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
 m
@@ -46,7 +46,7 @@ x
 x <- m[c(2:6),c(2:9)]
 x
 ```
-Challenge 3
+**Challenge 3**
 ```{r Challenge 3}
 a <- array(data = 400:1, dim = c(5,5,4,4))
 #All 4D specified so return 1 value
@@ -56,7 +56,7 @@ a[2, 3, 2,]
 # 2 dimensions have range so 2D
 a[1:5, 1:5, 3, 3]
 ```
-Challenge 4
+**Challenge 4**
 ```{r Challenge 4, }
 Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
     "Daubentoniidae")
@@ -82,7 +82,7 @@ Phylogeny
 
 
 ```
-Challenge 5 
+**Challenge 5**
 ```{r Challenge 5}
 m3 <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
 
